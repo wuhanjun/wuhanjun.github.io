@@ -71,25 +71,26 @@
                   <a
                     class="article-title"
                     href="https://wuhanjun.github.io/blog/init-2019-3-8.html"
-                    >博客示例</a
+                    >博客坑点</a
                   >
                 </h1>
               </header>
               <div class="article-entry" itemprop="articleBody">
                 <p>
                   <strong>摘要</strong>
-                  文字、code
+                  仓库名
                 </p>
                 <p>
-                  下面是一段代码
+                  1. 仓库名必须与你github的账号同名，否则就必须要用gh-pages分支
+                </p>
+                <p>
+                  2. 文件目录不能与存在的仓库名同名，否则文件夹中的资源就会访问不到。
                 </p>
                 <pre>
                   <code>
-                    alert(1);
-                    console.log(99)
-                    a = [1,2,3]
-                    a.forEach(() => {
-                      console.log(1)asxadasdasdads
+                    const arr = [1,2,3]
+                    arr.forEach((num) => {
+                      console.log(num)
                     })
                   </code>
                 </pre>
