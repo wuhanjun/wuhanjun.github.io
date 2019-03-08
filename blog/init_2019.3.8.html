@@ -9,13 +9,13 @@
       name="description"
       content="吴晗君的博客。"
     />
-    <link rel="icon" href="./static/images/favicon.png" />
+    <link rel="icon" href="../static/images/favicon.png" />
     <meta
       name="viewport"
       content="width=device-width,initial-scale=1,maximum-scale=1"
     />
-    <link rel="stylesheet" href="./static/styles/index.css" />
-    <script src="./static/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/styles/index.css" />
+    <script src="../static/js/jquery.min.js"></script>
   </head>
 </html>
 <body>
@@ -56,7 +56,7 @@
             itemprop="blogPost"
           >
             <div class="article-meta">
-              <a href="/2019/03/08/how-to-check-javascript-stacktrace/"
+              <a href="https://wuhanjun.github.io/blog/init_2019.3.8.html"
                 class="article-date">
                 <time
                   datetime="2019-03-08T02:00:00.000Z"
@@ -80,24 +80,22 @@
                   <strong>摘要</strong>
                   文字、code
                 </p>
-                <p class="article-more-link">
-                  <a href="https://wuhanjun.github.io/blog/init_2019.3.8.html"
-                    >阅读全文...</a
-                  >
+                <p>
+                  下面是一段代码
                 </p>
+                <pre>
+                  <code>
+                    alert(1);
+                    console.log(99)
+                    a = [1,2,3]
+                    a.forEach(() => {
+                      console.log(1)asxadasdasdads
+                    })
+                  </code>
+                </pre>
               </div>
             </div>
           </article>
-
-
-          <nav id="page-nav">
-            <span class="page-number current">1</span
-            ><a class="page-number" href="/page/2/">2</a
-            ><a class="page-number" href="/page/3/">3</a
-            ><span class="space">&hellip;</span
-            ><a class="page-number" href="/page/38/">38</a
-            ><a class="extend next" rel="next" href="/page/2/">下一页</a>
-          </nav>
         </section>
         <aside id="sidebar">
           <div class="widget-wrap" style="margin-top:110px">
@@ -119,11 +117,6 @@
           </div>
         </aside>
       </div>
-      <footer>
-        <canvas id="ocean"></canvas>
-      </footer>
     </div>
   </div>
-  <!-- <script src="https://www.tweenmax.com.cn/demo/minified/TweenMax.min.js"></script> -->
-  <!-- <script src="./static/js/wave.js"></script> -->
 </body>
