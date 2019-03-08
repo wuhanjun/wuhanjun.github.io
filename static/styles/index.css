@@ -2210,3 +2210,9 @@ dl.blog_more {
   line-height: 50px;
   color: #103ffb
 }
+
+#ocean {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
