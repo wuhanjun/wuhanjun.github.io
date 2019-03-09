@@ -4,7 +4,7 @@ title:      "Welcome to W Blog"
 subtitle:   " \"Hello World, Hello Blog\""
 date:       2019-03-08 08:35:00
 author:     "W"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/about-bg.jpeg"
 tags:
     - 生活
 ---
