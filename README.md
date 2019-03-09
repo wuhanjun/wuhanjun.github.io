@@ -1,4 +1,4 @@
-# [wuhanjun.github.io](https://github.com/wuhanjun/wuhanjun.github.io)
+# [wuhanjun.github.io](https://wuhanjun.github.io)
 
 
 ## 前言
