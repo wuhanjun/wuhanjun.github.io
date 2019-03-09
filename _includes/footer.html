@@ -76,7 +76,7 @@
                     <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="91px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                        src="https://ghbtns.com/github-btn.html?user=wuhanjun&repo=wuhanjun.github.io&type=star&count=true" >
                     </iframe>
                 </p>
             </div>
@@ -108,7 +108,8 @@
 
 <!--home-bg-->
 <script>
-    const src = 'https://wuhanjun.github.io/img/home-bg.jpeg'
+    let pathname = location.pathname.substring(1, location.pathname.length - 1)
+    const src = "{{site.bgURL}}"
     const img = new Image()
     img.src = src
     img.onload = function () {
