@@ -106,6 +106,16 @@
     }
 </script>
 
+<!--home-bg-->
+<script>
+    const src = 'https://wuhanjun.github.io/img/home-bg.jpeg'
+    const img = new Image()
+    img.src = src
+    img.onload = function () {
+        $('.intro-header').style('background-image', `url(src)`)
+    }
+</script>
+
 <!-- 
      Because of the native support for backtick-style fenced code blocks 
      right within the Markdown is landed in Github Pages, 
@@ -141,7 +151,7 @@
 
 <!--fastClick.js -->
 <script>
-    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
         var $nav = document.querySelector("nav");
         if($nav) FastClick.attach($nav);
     })
