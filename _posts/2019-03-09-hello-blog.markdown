@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Welcome to W Blog"
+title:      "Welcome to W's Blog"
 subtitle:   " \"Hello World, Hello Blog\""
 date:       2019-03-08 08:35:00
 author:     "W"
@@ -54,6 +54,6 @@ W 的 Blog 就这么开通了。
 
 ## 后记
 
-可以去[原作者仓库](https://github.com/huxpro)那里点个赞，[给我点赞](https://github.com/wuhanjun/wuhanjun.github.io)我也很开心😄
+可以去[原作者仓库](https://github.com/huxpro)那里点个赞😄
 
 —— 晗君 后记于 2019.03.09

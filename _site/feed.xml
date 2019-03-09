@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>W君的博客</title>
+    <title>吴晗君的博客</title>
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 09 Mar 2019 12:18:12 +0800</pubDate>
-    <lastBuildDate>Sat, 09 Mar 2019 12:18:12 +0800</lastBuildDate>
+    <pubDate>Sat, 09 Mar 2019 12:34:26 +0800</pubDate>
+    <lastBuildDate>Sat, 09 Mar 2019 12:34:26 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
-        <title>Welcome to W Blog</title>
+        <title>Welcome to W's Blog</title>
         <description>&lt;blockquote&gt;
   &lt;p&gt;“Yeah It’s on. ”&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -61,7 +61,7 @@
 
 &lt;h2 id=&quot;后记&quot;&gt;后记&lt;/h2&gt;
 
-&lt;p&gt;可以去&lt;a href=&quot;https://github.com/huxpro&quot;&gt;原作者仓库&lt;/a&gt;那里点个赞，&lt;a href=&quot;https://github.com/wuhanjun/wuhanjun.github.io&quot;&gt;给我点赞&lt;/a&gt;我也很开心😄&lt;/p&gt;
+&lt;p&gt;可以去&lt;a href=&quot;https://github.com/huxpro&quot;&gt;原作者仓库&lt;/a&gt;那里点个赞😄&lt;/p&gt;
 
 &lt;p&gt;—— 晗君 后记于 2019.03.09&lt;/p&gt;
 </description>
