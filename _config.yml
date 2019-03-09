@@ -1,5 +1,5 @@
 # Site settings
-title: Your Blog
+title: W君的博客
 SEOTitle: W君的博客 | W's blog
 # header-img: img/home-bg.jpeg
 email: huxpro@gmail.com
@@ -82,19 +82,7 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
-        title: "Hux Blog",
-        href: "http://huangxuan.me"
-    },{
-        title: "Foo",
-        href: "#"
-    },{
-        title: "Bar",
-        href: "#"
-    },{
-        title: "Example Friends",
-        href: "#"
-    },{
-        title: "It helps SEO",
-        href: "#"
+        title: "github",
+        href: "https://github.com/wuhanjun"
     }
 ]
