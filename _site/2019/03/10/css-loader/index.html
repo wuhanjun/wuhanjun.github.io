@@ -12,7 +12,7 @@
 
     <title>Welcome to W's Blog - 吴晗君的博客 | W's blog</title>
 
-    <link rel="canonical" href="http://localhost:4000/2019/03/08/hello-blog/">
+    <link rel="canonical" href="http://localhost:4000/2019/03/10/css-loader/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -140,15 +140,15 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#生活" title="生活">生活</a>
+                        <a class="tag" href="/tags/#webpack" title="webpack">webpack</a>
                         
                     </div>
                     <h1>Welcome to W's Blog</h1>
                     
                     
-                    <h2 class="subheading"> "Hello World, Hello Blog"</h2>
+                    <h2 class="subheading"> "css-loader"</h2>
                     
-                    <span class="meta">Posted by W on March 8, 2019</span>
+                    <span class="meta">Posted by W on March 10, 2019</span>
                 </div>
             </div>
         </div>
@@ -167,20 +167,12 @@
                 post-container">
 
 				<blockquote>
-  <p>“Yeah It’s on. ”</p>
+  <p>“css-loader源码 ”</p>
 </blockquote>
 
 <h2 id="前言">前言</h2>
 
-<p>W 的 Blog 就这么开通了。</p>
-
-<p><a href="#build">跳过废话，直接看记录的坑 </a></p>
-
-<p>16年的博客因为收费关闭了，现在在github上开一个。</p>
-
-<p>刚开始自己吭哧吭哧写了页面，后来突然发现大家都是用jekyll之类的工具生成的，大家可以去fork一个，然后修改一下做成自己的，挺实用的，节省时间。</p>
-
-<p>比如这篇笔记，是用markdown写的，jekyll会帮你处理好模版引擎这些琐碎的事情。</p>
+<p>相比较于style-loader、less-loader、file-loader，css-loader要处理<code class="highlighter-rouge">@import</code>和<code class="highlighter-rouge">url(src)</code>的语法，所以较为繁琐一些。</p>
 
 <p id="build"></p>
 <hr />
@@ -188,37 +180,50 @@
 <h2 id="正文">正文</h2>
 
 <hr />
-<p>接下来记一下搭建gitpage时遇到的问题</p>
-<ul>
-  <li>本地开发环境
-    <ol>
-      <li>注意点：公司的Gitlab和Github可以共用一个rsa，rsa只是Github放在本地机器的标识，用来证明这台电脑以后都可以直接操作远程仓库。这是<a href="https://git-scm.com/book/zh/v1/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E7%94%9F%E6%88%90-SSH-%E5%85%AC%E9%92%A5">整体流程</a>。</li>
-    </ol>
-  </li>
-  <li>建立gitpage仓库时的注意点
-    <ol>
-      <li>如果你用的<a href="https://pages.github.com/">默认的</a>方式搭建，那么gitpage仓库名为username.github.io，方式搭建，那么gitpage仓库名必须为username必须与你的Github账号完全一致。gh-pages的方式网上搜一下教程，很多。</li>
-      <li>仓库中的文件名不允许和其他仓库名相同，这样会导致你这个目录下的资源404。</li>
-    </ol>
-  </li>
-</ul>
+<p>从拿到的结果看，css-loader将<code class="highlighter-rouge">url('../images/favicon.png')</code>这个操作解析为了两步。</p>
 
-<p>一些建议</p>
-<ol>
-  <li>可以clone或者firk一份好看的gitpage，会节省很多时间。</li>
-  <li>而且，git clone的话，建议找好就开始。因为文件会比较大。</li>
-  <li>在你clone的时候，可以浏览<a href="http://jekyllcn.com/">jekyllen</a>这个网站，先安装一下环境。操作很简单，没有几步，但是限于网速要很久。</li>
-  <li>之后，你可以大致翻阅一下文档，看看是怎么用的，然后对照着fork过来的目录理解就可以了。</li>
-  <li>等仓库clone到本地了，改一些个人的配置，例如首页图片、favicon、资源路径、_config.yml就能跑起来了。</li>
-  <li>你如果直接fork的我这份模版，npm run watch就能在本地调好后上传了。</li>
-  <li>Year~</li>
-</ol>
+<p>1.用require语法去解析图片，这样在打包时就生成一个新的模块：’./src/images/favicon.png’，导出的模块内容是图片名称</p>
 
-<h2 id="后记">后记</h2>
+<p>2.webpack将require语法解析成自定义的__webpack_require__。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 解析前源=代码
+body {
+  background-color: red;
+  background-image: url('../images/favicon.png')
+}
+</code></pre></div></div>
 
-<p>可以去<a href="https://github.com/huxpro">原作者仓库</a>那里点个赞😄</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// css-loader返回的代码
+return callback(null, runtimeCode + importCode + moduleCode + exportsCode)
+</code></pre></div></div>
 
-<p>—— 晗君 后记于 2019.03.09</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 解析后的代码
+./src/styles/index.css:
+
+eval("
+exports = module.exports = __webpack_require__(\"./node_modules/_css-loader@2.1.0@css-loader/dist/runtime/api.js\")(false);\n
+
+// Imports\n
+var urlEscape = __webpack_require__(\"./node_modules/_css-loader@2.1.0@css-loader/dist/runtime/url-escape.js\";\n
+
+var ___CSS_LOADER_URL___0___ = urlEscape(__webpack_require__(/*! ../images/favicon.png */ \"./src/images/favicon.png\"));
+
+\n\n
+// Module\n
+exports.push([
+  module.i, 
+  \"/* @import './a.css'; */\\n
+  body {\\n
+    background-color: red;\\n
+    background-image: url(\" + ___CSS_LOADER_URL___0___ + \")\\n
+  }\", \"\"
+]);
+
+
+
+./src/images/favicon.png:
+
+eval("module.exports = __webpack_require__.p + \"61e8d657aff2d3d4637b4d541d170e9c.png\";
+</code></pre></div></div>
 
 
                 <hr>
@@ -228,10 +233,10 @@
 
                 <ul class="pager">
                     
-                    
-                    <li class="next">
-                        <a href="/2019/03/10/css-loader/" data-toggle="tooltip" data-placement="top" title="Welcome to W's Blog">Next Post &rarr;</a>
+                    <li class="previous">
+                        <a href="/2019/03/08/hello-blog/" data-toggle="tooltip" data-placement="top" title="Welcome to W's Blog">&larr; Previous Post</a>
                     </li>
+                    
                     
                 </ul>
 
